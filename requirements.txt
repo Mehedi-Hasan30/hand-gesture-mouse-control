@@ -1,0 +1,17 @@
+# Core computer vision
+opencv-python>=4.9.0
+mediapipe>=0.10.14
+numpy>=1.26.0
+
+# Mouse and keyboard control
+pyautogui>=0.9.54
+pynput>=1.7.6
+
+# GUI
+customtkinter>=5.2.2
+
+# Packaging (development)
+pyinstaller>=6.3.0
+
+# Development (optional)
+pytest>=8.0.0

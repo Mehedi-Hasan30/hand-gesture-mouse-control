@@ -1,0 +1,40 @@
+{
+  "app": {
+    "name": "AI Hand Gesture Mouse Control",
+    "version": "0.2.0",
+    "debug": false
+  },
+  "camera": {
+    "index": 0,
+    "width": 640,
+    "height": 480,
+    "fps_target": 30
+  },
+  "hand_tracking": {
+    "max_hands": 1,
+    "min_detection_confidence": 0.7,
+    "min_tracking_confidence": 0.7
+  },
+  "mouse": {
+    "smoothing_factor": 0.35,
+    "sensitivity": 1.0,
+    "dead_zone": 0.02
+  },
+  "gestures": {
+    "pinch_threshold": 0.05,
+    "drag_hold_ms": 250,
+    "double_click_interval_ms": 400,
+    "scroll_sensitivity": 800.0,
+    "scroll_dead_zone": 0.01
+  },
+  "gui": {
+    "theme": "dark",
+    "window_width": 900,
+    "window_height": 600
+  },
+  "logging": {
+    "level": "INFO",
+    "log_to_file": true,
+    "log_file": "logs/app.log"
+  }
+}
