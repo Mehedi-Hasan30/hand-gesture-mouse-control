@@ -1,7 +1,7 @@
 """Application path resolution for development and PyInstaller builds."""
-
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -36,11 +36,15 @@ def get_runtime_root() -> Path:
     Return the writable root used for logs, local settings, and models.
 
     In development this is the project root. In a PyInstaller build this is
-    the directory containing the executable.
+    a writable per-user application data folder (since the executable may be
+    installed in a protected location like Program Files).
 
     Returns:
         Path to writable runtime root.
     """
     if is_frozen():
-        return Path(sys.executable).resolve().parent
+        app_data = os.environ.get("APPDATA", str(Path.home()))
+        runtime_dir = Path(app_data) / "HandGestureMouse"
+        runtime_dir.mkdir(parents=True, exist_ok=True)
+        return runtime_dir
     return Path(__file__).resolve().parent.parent
