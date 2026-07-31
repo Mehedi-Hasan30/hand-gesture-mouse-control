@@ -49,3 +49,9 @@ config/settings.local.json
 
 # Downloaded ML models
 assets/models/*.task
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
